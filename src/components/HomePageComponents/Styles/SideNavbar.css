@@ -1,0 +1,107 @@
+/* Sidebar Styling */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: auto;
+    background-color: transparent;
+    color: white;
+    transition: width 0.3s ease-in-out;
+    width: 4rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    /* Ensuring it's always on top */
+}
+
+/* Expand Sidebar */
+.sidebar.expanded {
+    width: 14rem;
+    background-color: rgba(17, 24, 39, 0.85);
+    border-radius: 0 10px 10px 0;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.nav-item:hover {
+    background-color: rgba(31, 41, 55, 0.7);
+    transform: scale(1.05);
+}
+
+/* Centering icons */
+.nav-icon {
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+}
+
+/* Hide text when collapsed */
+.nav-text {
+    margin-left: 1rem;
+    font-size: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Show text when expanded */
+.sidebar.expanded .nav-text {
+    opacity: 1;
+}
+
+/* Mobile Toggle Button */
+.mobile-menu-btn {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1050;
+    background-color: rgba(31, 41, 55, 0.8);
+    padding: 0.6rem;
+    border-radius: 0.5rem;
+    transition: transform 0.2s;
+    display: none;
+}
+
+/* Show the menu button only in mobile & tablet views */
+@media (max-width: 1024px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 0;
+        transition: width 0.3s;
+    }
+
+    .sidebar.mobile-open {
+        width: 14rem;
+        background-color: rgba(17, 24, 39, 0.9);
+        border-radius: 0 10px 10px 0;
+    }
+
+    .nav-text {
+        opacity: 1;
+    }
+}

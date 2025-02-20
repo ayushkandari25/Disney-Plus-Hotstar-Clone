@@ -1,0 +1,165 @@
+/* ErrorPage.css */
+:root {
+  --primary-color: #0984e3;
+  --text-primary: #2d3436;
+  --text-secondary: #636e72;
+  --text-tertiary: #b2bec3;
+  --bg-color: #f5f5f5;
+}
+
+.error-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+  padding: 1rem;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Open Sans', sans-serif;
+}
+
+.error-content {
+  text-align: center;
+  padding: clamp(1rem, 5vw, 3rem);
+  max-width: min(90%, 600px);
+  width: 100%;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.error-code {
+  font-size: clamp(80px, 15vw, 120px);
+  font-weight: bold;
+  color: var(--text-primary);
+  margin-bottom: clamp(0.5rem, 2vw, 1rem);
+  position: relative;
+  animation: float 6s ease-in-out infinite;
+  text-shadow: 2px 2px 0px var(--primary-color);
+}
+
+.error-message {
+  font-size: clamp(20px, 4vw, 24px);
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+  color: var(--text-secondary);
+}
+
+.error-description {
+  font-size: clamp(14px, 3vw, 16px);
+  margin-bottom: clamp(1.5rem, 4vw, 2rem);
+  color: var(--text-tertiary);
+  line-height: 1.6;
+  padding: 0 clamp(1rem, 3vw, 2rem);
+}
+
+.astronaut {
+  font-size: clamp(40px, 8vw, 50px);
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+  animation: spin 20s linear infinite;
+  display: inline-block;
+}
+
+.home-button {
+  display: inline-block;
+  padding: clamp(10px, 2vw, 12px) clamp(20px, 4vw, 30px);
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  font-size: clamp(14px, 2.5vw, 16px);
+}
+
+.home-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(9, 132, 227, 0.3);
+  background-color: #0873c4;
+}
+
+.home-button:active {
+  transform: translateY(0);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Landscape orientation styles */
+@media (max-height: 600px) and (orientation: landscape) {
+  .error-content {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    text-align: left;
+    max-width: 800px;
+  }
+
+  .astronaut {
+    grid-row: 1 / 4;
+    font-size: clamp(60px, 12vw, 80px);
+    margin: auto;
+  }
+
+  .error-code {
+    margin: 0;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #e0e0e0;
+    --text-tertiary: #a0a0a0;
+  }
+
+  .error-content {
+    background: #2d2d2d;
+  }
+
+  .home-button {
+    background-color: #0995ff;
+  }
+
+  .home-button:hover {
+    background-color: #0882e3;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+  .home-button {
+    padding: 15px 35px;
+  }
+}
+
+/* For very small devices */
+@media (max-width: 320px) {
+  .error-content {
+    padding: 0.8rem;
+  }
+
+  .error-description {
+    padding: 0;
+  }
+}
+
+/* For large screens */
+@media (min-width: 1200px) {
+  .error-content {
+    padding: 4rem;
+    max-width: 800px;
+  }
+
+  .error-code {
+    font-size: 150px;
+  }
+}

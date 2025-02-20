@@ -1,0 +1,159 @@
+/* Navbar Container */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    background-color: #0F1014;
+    color: white;
+}
+
+/* Logo */
+.logo {
+    height: 64px;
+}
+
+/* Navbar Right Section */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Welcome Text */
+.welcome-text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #9ca3af;
+    white-space: nowrap;
+    /* Prevents text from breaking */
+}
+
+/* Authentication Buttons */
+.auth-button {
+    padding: 8px 24px;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.login-button {
+    background-color: #2563eb;
+    color: white;
+}
+
+.login-button:hover {
+    background-color: #1e40af;
+}
+
+.logout-button {
+    background-color: #dc2626;
+    color: white;
+}
+
+.logout-button:hover {
+    background-color: #b91c1c;
+}
+
+/* Language Dropdown */
+.language-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Ensures small spacing */
+    position: relative;
+}
+
+.language-select {
+    appearance: none;
+    background-color: #1f222b;
+    color: #9ca3af;
+    padding: 8px 32px 8px 12px;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    border: 1px solid #555;
+    cursor: pointer;
+}
+
+.language-select:focus {
+    border-color: #2563eb;
+    outline: none;
+}
+
+/* Dropdown Icon */
+.dropdown-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    width: 16px;
+    height: 16px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 16px;
+        align-items: center;
+    }
+
+    .navbar-right {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+    }
+
+    .language-dropdown {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .auth-button {
+        width: auto;
+        padding: 8px 20px;
+        text-align: center;
+        font-size: 0.875rem;
+    }
+
+    .language-select {
+        width: auto;
+        padding: 8px 28px 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        height: 48px;
+    }
+
+    .navbar-right {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .welcome-text {
+        font-size: 0.875rem;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .language-dropdown {
+        width: auto;
+    }
+
+    .auth-button {
+        font-size: 0.75rem;
+        padding: 8px 16px;
+    }
+}

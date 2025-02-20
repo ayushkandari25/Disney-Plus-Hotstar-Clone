@@ -1,0 +1,185 @@
+/* General Styles */
+.midpart-container {
+    background-color: #0F1014;
+    min-height: 100vh;
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Marquee Text */
+.midpart-title {
+    font-size: 2rem;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 32px;
+}
+
+/* Responsive Layout */
+.midpart-content {
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+/* Table Styles */
+.midpart-table-container {
+    width: 100%;
+}
+
+.midpart-table {
+    width: 100%;
+    color: white;
+    margin-bottom: 32px;
+    border-collapse: collapse;
+}
+
+.midpart-th {
+    text-align: left;
+    padding-bottom: 16px;
+    font-weight: 400;
+    color: #9ca3af;
+}
+
+.super-text {
+    color: #facc15;
+    font-weight: 600;
+}
+
+.premium-text {
+    color: #9ca3af;
+    font-weight: 600;
+}
+
+.sub-text {
+    color: #9ca3af;
+    font-size: 0.875rem;
+    margin-top: 4px;
+}
+
+/* Table Row Styles */
+.midpart-tbody tr {
+    height: 56px;
+    border-bottom: 1px solid #555;
+}
+
+/* Icons */
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.icon-white {
+    color: white;
+}
+
+/* Subscription Period Selector */
+.subscription-buttons {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.active-button {
+    padding: 8px 16px;
+    background-color: #2563eb;
+    border-radius: 6px;
+    color: white;
+    font-size: 0.875rem;
+    border: none;
+    cursor: pointer;
+}
+
+.inactive-button {
+    padding: 8px 16px;
+    color: #9ca3af;
+    font-size: 0.875rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Subscription Cards */
+.subscription-options {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.subscription-card {
+    flex: 1;
+    background-color: #1F1F1F;
+    padding: 16px;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    text-align: center;
+}
+
+.active-card {
+    border-color: #2563eb;
+}
+
+.price-text {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.payment-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .midpart-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .subscription-options {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .subscription-card {
+        width: 100%;
+    }
+
+    .subscription-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .midpart-title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .midpart-container {
+        padding: 16px;
+    }
+
+    .midpart-table th,
+    .midpart-table td {
+        font-size: 0.875rem;
+    }
+
+    .subscription-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .subscription-options {
+        align-items: center;
+    }
+
+    .subscription-card {
+        width: 90%;
+    }
+}
