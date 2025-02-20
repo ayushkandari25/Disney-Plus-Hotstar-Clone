@@ -9,11 +9,11 @@ This project was developed during a construct week, so some features may not be 
 - [About the Project](#about-the-project)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
+- [Usage](#usage)
 - [Screenshots](#screenshots)
 - [Folder Structure](#folder-structure)
 - [Future Improvements](#future-improvements)
 - [Contributors](#contributors)
-- [License](#license)
 
 ---
 
