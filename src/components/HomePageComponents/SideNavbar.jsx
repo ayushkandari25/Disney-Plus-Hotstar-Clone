@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   Home,
   Clapperboard,
@@ -9,14 +9,14 @@ import {
   Info,
   X,
 } from "lucide-react";
-import "./Styles/SideNavbar.css"; // Import the external CSS file
+import "./Styles/SideNavbar.css";
 
 const SideNavbar = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
-  // Function to handle scrolling to top
   const handleHomeClick = () => {
     if (location.pathname === "/home") {
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -25,7 +25,6 @@ const SideNavbar = () => {
 
   return (
     <>
-      {/* Mobile Toggle Button (Only visible on mobile & tablet) */}
       <button
         className="mobile-menu-btn"
         onClick={() => setIsMobileOpen(!isMobileOpen)}
@@ -50,7 +49,7 @@ const SideNavbar = () => {
             <Home className="nav-icon" />
             <span className="nav-text">Home</span>
           </Link>
-          <Link to="/Error404" className="nav-item">
+          <Link to="/mainMovies" className="nav-item">
             <Clapperboard className="nav-icon" />
             <span className="nav-text">Movies</span>
           </Link>
